@@ -39,8 +39,10 @@ const Chromaticities encodingPri =      // Rec.709 D65
 //  0 - BT.1886 with gamma 2.4
 //  1 - sRGB IEC 61966-2-1:1999
 //  2 - gamma 2.2
-//  3 - ST.2084
-//  4 - HLG
+//  3 - gamma 2.4
+//  4 - ST.2084
+//  5 - HLG
+//  6 - display linear
 const int eotf_enum = 0;                // BT.1886
 
 // ---- ---- ---- ---- ---- ---- //
@@ -94,7 +96,7 @@ void main (
 {
     float RGB[3] = {rIn, gIn, bIn};
     
-    float RGB_display_linear[3] = bt1886_fwd_f3( RGB, 2.4 );
+    float RGB_display_linear[3] = eotf( RGB, eotf_enum);
     
     // Display RGB to XYZ
     float XYZ[3] = mult_f3_f33( RGB_display_linear, PARAMS.OUTPUT_RGB_TO_XYZ );
