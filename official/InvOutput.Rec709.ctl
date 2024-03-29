@@ -89,85 +89,49 @@ void main (
     output varying float bOut,
     output varying float aOut,
     input varying float aIn = 1.,
-    input varying bool verbose = false
+    input varying bool verbose = true
 )
 {
-    float aces[3] = {rIn, gIn, bIn};
+    float RGB[3] = {rIn, gIn, bIn};
     
-    float JMh[3] = aces_to_JMh( aces, 
-                                peakLuminance );
+    float RGB_display_linear[3] = bt1886_fwd_f3( RGB, 2.4 );
+    
+    // Display RGB to XYZ
+    float XYZ[3] = mult_f3_f33( RGB_display_linear, PARAMS.OUTPUT_RGB_TO_XYZ );
 
-    float tonemappedJMh[3] = tonemapAndCompress_fwd( JMh, 
-                                                     PARAMS, 
-                                                     REACH_GAMUT_TABLE, 
-                                                     REACH_TABLE );    
+    if (!f2_equal_to_tolerance(limitingPri.white, encodingPri.white, 1e-5)) {
+        XYZ = scale_white( XYZ, PARAMS, true);
+    }
 
-    float compressedJMh[3] = gamutMap_fwd( tonemappedJMh, 
+    float compressedJMh[3] = XYZ_output_to_JMh( XYZ, 
+                                                PARAMS );
+
+    float tonemappedJMh[3] = gamutMap_inv( compressedJMh, 
                                            PARAMS,
                                            GAMUT_CUSP_TABLE, 
                                            GAMUT_TOP_GAMMA, 
                                            REACH_GAMUT_TABLE );
 
-    float XYZ[3] = JMh_to_output_XYZ( compressedJMh, 
-                                      PARAMS );
-
-    // ---- Display Encoding ---- //    
-
-    // White scaling
-//         print("XYZ:\n\t"); print_f3( XYZ);
+    float JMh[3] = tonemapAndCompress_inv( tonemappedJMh, 
+                                           PARAMS, 
+                                           REACH_GAMUT_TABLE, 
+                                           REACH_TABLE );    
     
-    if (!f2_equal_to_tolerance(limitingPri.white, encodingPri.white, 1e-5)) {
-        XYZ = scale_white( XYZ, PARAMS, false);
-    }
-//         print("XYZ_scaled:\n\t"); print_f3( XYZ);
+    float aces[3] = JMh_to_aces( JMh, 
+                                 peakLuminance );
 
-    // XYZ to display RGB
-    float RGB_display_linear[3] = mult_f3_f33( XYZ, PARAMS.OUTPUT_XYZ_TO_RGB );
-
-    // Clamp 0-1 and apply inverse EOTF
-    float out[3] = clamp_f3( RGB_display_linear, 0.0, 1.0);
-    out = bt1886_rev_f3( out, 2.4, 1.0, 0.0);
-
-
-    
-//     if (as2020PQ) {
-//         out = mult_f_f3( referenceLuminance, mult_f3_f33( out, BT709_to_BT2020));
-//         out = Y_2_ST2084_f3( out );
-//     } else {
-  
     if (verbose) {
-//         print( "XYZ_to_RGB_limit:\n");
-//         print_f33( transpose_f33( PARAMS.LIMIT_XYZ_TO_RGB) );
-// 
-//         print( "XYZ_to_RGB_output:\n");
-//         print_f33( transpose_f33( PARAMS.OUTPUT_XYZ_TO_RGB) );
-//         
-//         print( "compr = ", PARAMS.compr ,"\n");
-//         print( "sat = ", PARAMS.sat ,"\n");
-//         print( "sat_thr = ", PARAMS.sat_thr ,"\n");
-//         print( "limitJmax = ", PARAMS.limitJmax ,"\n");
-//         print( "midJ = ", PARAMS.midJ ,"\n");
-//         print( "focusDist = ", focusDistance ,"\n");
-//         print( "cuspMidBlend = ", cuspMidBlend ,"\n");
-//         print( "model_gamma = ", PARAMS.model_gamma ,"\n");
-//         print( "lowerHullGamma = ", PARAMS.lowerHullGamma ,"\n");
-//         print( "smoothCusps = ", smoothCusps ,"\n");
-// 
-//         print( "outWhite = ", PARAMS.XYZ_w_output[0], "\t", PARAMS.XYZ_w_output[1], "\t",  PARAMS.XYZ_w_output[2],"\n");
-//         print( "limitWhite = ", PARAMS.XYZ_w_limit[0], "\t", PARAMS.XYZ_w_limit[1], "\t",  PARAMS.XYZ_w_limit[2],"\n");
-
-        print("srcRGB:\n\t"); print_f3( aces);
-        print("JMh:\n\t"); print_f3( JMh);
-        print("tonemappedJMh:\n\t"); print_f3( tonemappedJMh);
-        print("compressedJMh:\n\t"); print_f3( compressedJMh);
+        print("RGB_display_linear:\n\t"); print_f3( RGB_display_linear);
         print("XYZ:\n\t"); print_f3( XYZ);
-        print("linearRGBout:\n\t"); print_f3( RGB_display_linear);
-        print("CVout:\n\t"); print_f3( out);
+        print("compressedJMh:\n\t"); print_f3( compressedJMh);
+        print("tonemappedJMh:\n\t"); print_f3( tonemappedJMh);
+        print("JMh:\n\t"); print_f3( JMh);
+        print("srcRGB:\n\t"); print_f3( aces);
     }
     
-    rOut = out[0];
-    gOut = out[1];
-    bOut = out[2];
+    rOut = aces[0];
+    gOut = aces[1];
+    bOut = aces[2];
     aOut = aIn;
 
 }
