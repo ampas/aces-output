@@ -60,27 +60,6 @@ const ODTParams PARAMS = init_ODTParams( peakLuminance,
                                          limitingPri,
                                          encodingPri );
 
-// Build tables
-// Reach gamut JMh
-const float REACH_GAMUT_TABLE[gamutCuspTableSize][3] = make_gamut_table( REACH_PRI, 
-                                                                         peakLuminance );
-
-// Reach cusps at maxJ
-const float REACH_TABLE[gamutCuspTableSize] = make_gamut_reach_table( REACH_PRI, 
-                                                                      PARAMS.limitJmax, 
-                                                                      peakLuminance );
-
-// JMh of limiting gamut (used for final gamut mapping)
-const float GAMUT_CUSP_TABLE[gamutCuspTableSize][3] = make_gamut_table( limitingPri, 
-                                                                        peakLuminance );
-
-// Gammas to use for approximating boundaries
-const float GAMUT_TOP_GAMMA[gamutCuspTableSize] = make_upper_hull_gamma( GAMUT_CUSP_TABLE, 
-                                                                         PARAMS, 
-                                                                         peakLuminance );
-
-
-
 // Transform
 void main ( 
     input varying float rIn,
@@ -91,7 +70,7 @@ void main (
     output varying float bOut,
     output varying float aOut,
     input varying float aIn = 1.,
-    input varying bool verbose = true
+    input varying bool verbose = false
 )
 {
     float RGB[3] = {rIn, gIn, bIn};
@@ -105,32 +84,20 @@ void main (
         XYZ = scale_white( XYZ, PARAMS, true);
     }
 
-    float compressedJMh[3] = XYZ_output_to_JMh( XYZ, 
-                                                PARAMS,
-                                                surround_enum );
-
-    float tonemappedJMh[3] = gamutMap_inv( compressedJMh, 
-                                           PARAMS,
-                                           GAMUT_CUSP_TABLE, 
-                                           GAMUT_TOP_GAMMA, 
-                                           REACH_GAMUT_TABLE );
-
-    float JMh[3] = tonemapAndCompress_inv( tonemappedJMh, 
-                                           PARAMS, 
-                                           REACH_GAMUT_TABLE, 
-                                           REACH_TABLE );    
+    float aces[3] = outputTransform_inv( XYZ,
+                                         peakLuminance, 
+                                         PARAMS, 
+                                         limitingPri, 
+                                         surround_enum );
     
-    float aces[3] = JMh_to_aces( JMh, 
-                                 peakLuminance );
-
-    if (verbose) {
-        print("RGB_display_linear:\n\t"); print_f3( RGB_display_linear);
-        print("XYZ:\n\t"); print_f3( XYZ);
-        print("compressedJMh:\n\t"); print_f3( compressedJMh);
-        print("tonemappedJMh:\n\t"); print_f3( tonemappedJMh);
-        print("JMh:\n\t"); print_f3( JMh);
-        print("srcRGB:\n\t"); print_f3( aces);
-    }
+//     if (verbose) {
+//         print("RGB_display_linear:\n\t"); print_f3( RGB_display_linear);
+//         print("XYZ:\n\t"); print_f3( XYZ);
+//         print("compressedJMh:\n\t"); print_f3( compressedJMh);
+//         print("tonemappedJMh:\n\t"); print_f3( tonemappedJMh);
+//         print("JMh:\n\t"); print_f3( JMh);
+//         print("srcRGB:\n\t"); print_f3( aces);
+//     }
     
     rOut = aces[0];
     gOut = aces[1];
