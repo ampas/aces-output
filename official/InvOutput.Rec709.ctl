@@ -15,7 +15,7 @@ const Chromaticities limitingPri =      // Rec.709 D65
     { 0.6400,  0.3300},
     { 0.3000,  0.6000},
     { 0.1500,  0.0600},
-  { 0.32168,  0.33767}
+    { 0.32168,  0.33767}
 };
 
 const float peakLuminance = 100.;       // cd/m^2 (nits)
@@ -106,7 +106,8 @@ void main (
     }
 
     float compressedJMh[3] = XYZ_output_to_JMh( XYZ, 
-                                                PARAMS );
+                                                PARAMS,
+                                                surround_enum );
 
     float tonemappedJMh[3] = gamutMap_inv( compressedJMh, 
                                            PARAMS,
