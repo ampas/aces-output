@@ -1,24 +1,25 @@
 
-// <ACEStransformID>urn:ampas:aces:transformId:v2.0:Output.Academy.Rec709.a2.v1</ACEStransformID>
-// <ACESuserName>Rec.709</ACESuserName>
+// <ACEStransformID>urn:ampas:aces:transformId:v2.0:Output.Academy.Rec709_D60sim.a2.v1</ACEStransformID>
+// <ACESuserName>Rec.709 (D60 sim)</ACESuserName>
 
 // 
-// Output Transform - Rec709
+// Output Transform - Rec709 (D60 simulation)
 //
 
 //
 // Summary :
 //  This transform is intended for mapping OCES onto a Rec.709 broadcast monitor
 //  that is calibrated to a D65 white point at 100 cd/m^2. The assumed observer 
-//  adapted white is D65, and the viewing environment is a dim surround. 
+//  adapted white is D60, and the viewing environment is a dim surround. 
+//
+//  A possible use case for this transform would be cinema "soft-proofing".
 //
 // Display EOTF :
-//  The reference electro-optical transfer function specified in 
-//  Rec. ITU-R BT.1886.
+//  The reference electro-optical transfer function specified in Rec. ITU-R BT.1886.
 //
 // Assumed observer adapted white point:
 //  CIE 1931 chromaticities:    x            y
-//                              0.3127       0.329
+//                              0.32168      0.33767
 //
 // Viewing Environment:
 //  This ODT assumes viewing environment variables more typical of those associated with 
@@ -39,12 +40,12 @@ import "Library.DisplayEncoding";
 // ---- ODT PARAMETERS BELOW ---- //
 
 // Limiting primaries and white point
-const Chromaticities limitingPri =      // Rec.709 D65
+const Chromaticities limitingPri =      // Rec.709 "ACES" white
 {
     { 0.6400,  0.3300},
     { 0.3000,  0.6000},
     { 0.1500,  0.0600},
-    { 0.3127,  0.3290}
+    { 0.32168,  0.33767}
 };
 
 const float peakLuminance = 100.;       // cd/m^2 (nits)

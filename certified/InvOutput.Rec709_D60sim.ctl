@@ -1,9 +1,9 @@
 
-// <ACEStransformID>urn:ampas:aces:transformId:v2.0:InvOutput.Academy.Rec709.a2.v1</ACEStransformID>
-// <ACESuserName>Inverse Rec.709</ACESuserName>
+// <ACEStransformID>urn:ampas:aces:transformId:v2.0:Output.InvAcademy.Rec709_D60sim.a2.v1</ACEStransformID>
+// <ACESuserName>Inverse Rec.709 (D60 sim)</ACESuserName>
 
 // 
-// Inverse Output Transform - Rec709
+// Inverse Output Transform - Rec709 (D60 simulation)
 //
 
 
@@ -20,12 +20,12 @@ import "Library.DisplayEncoding";
 // ---- ODT PARAMETERS BELOW ---- //
 
 // Limiting primaries and white point
-const Chromaticities limitingPri =      // Rec.709 D65
+const Chromaticities limitingPri =      // Rec.709 D69
 {
     { 0.6400,  0.3300},
     { 0.3000,  0.6000},
     { 0.1500,  0.0600},
-    { 0.3127,  0.3290}
+    { 0.32168,  0.33767}
 };
 
 const float peakLuminance = 100.;       // cd/m^2 (nits)
