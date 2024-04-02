@@ -3,7 +3,7 @@
 // <ACESuserName>Rec.709</ACESuserName>
 
 // 
-// Output Transform - Rec709
+// Output Transform - Rec.709
 //
 
 

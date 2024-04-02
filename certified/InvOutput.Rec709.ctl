@@ -3,7 +3,7 @@
 // <ACESuserName>Inverse Rec.709</ACESuserName>
 
 // 
-// Inverse Output Transform - Rec709
+// Inverse Output Transform - Rec.709
 //
 
 
