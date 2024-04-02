@@ -54,7 +54,7 @@ const float peakLuminance = 100.;       // cd/m^2 (nits)
 //  0 - dark
 //  1 - dim
 //  2 - average
-const int surround_enum = 1;            // =dim
+const int surround_enum = 1;
 
 // Display parameters
 const Chromaticities encodingPri =      // Rec.709 D65
@@ -73,7 +73,7 @@ const Chromaticities encodingPri =      // Rec.709 D65
 //  4 - ST.2084
 //  5 - HLG
 //  6 - display linear
-const int eotf_enum = 0;                // BT.1886
+const int eotf_enum = 0;
 
 // ---- ---- ---- ---- ---- ---- //
 
