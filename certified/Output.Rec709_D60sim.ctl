@@ -6,25 +6,6 @@
 // Output Transform - Rec709 (D60 simulation)
 //
 
-//
-// Summary :
-//  This transform is intended for mapping OCES onto a Rec.709 broadcast monitor
-//  that is calibrated to a D65 white point at 100 cd/m^2. The assumed observer 
-//  adapted white is D60, and the viewing environment is a dim surround. 
-//
-//  A possible use case for this transform would be cinema "soft-proofing".
-//
-// Display EOTF :
-//  The reference electro-optical transfer function specified in Rec. ITU-R BT.1886.
-//
-// Assumed observer adapted white point:
-//  CIE 1931 chromaticities:    x            y
-//                              0.32168      0.33767
-//
-// Viewing Environment:
-//  This ODT assumes viewing environment variables more typical of those associated with 
-//  video mastering.
-//
 
 
 

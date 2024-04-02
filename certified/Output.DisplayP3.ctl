@@ -6,28 +6,7 @@
 // Output Transform - DisplayP3
 //
 
-//
-// Summary :
-//  This transform is intended for mapping OCES onto a display calibrated using the 
-//  DCI P3 primaries, a D65 white point, and the sRGB transfer function as defined at
-//  https://developer.apple.com/documentation/coregraphics/cgcolorspace/1408916-displayp3
-//
-//  There is no display standard associated with the color space thus, for
-//  consistency, 100 cd/m^2 is recommended as the peak display luminance.
-//  The assumed observer adapted white is D65, and the viewing environment is
-//  that of a dim surround.
-//
-// Display EOTF :
-//  The sRGB piece-wise transfer function specified in IEC 61966-2-1:1999 (sRGB).
-//
-// Assumed observer adapted white point:
-//  CIE 1931 chromaticities:    x            y
-//                              0.3127       0.329
-//
-// Viewing Environment:
-//  This ODT assumes viewing environment variables more typical of those associated with 
-//  video mastering.
-//
+
 
 
 import "Library.Utilities";
@@ -71,7 +50,7 @@ const Chromaticities encodingPri =      // P3 D65
 //  0 - BT.1886 with gamma 2.4
 //  1 - sRGB IEC 61966-2-1:1999
 //  2 - gamma 2.2
-//  3 - gamma 2.4
+//  3 - gamma 2.6
 //  4 - ST.2084
 //  5 - HLG
 //  6 - display linear

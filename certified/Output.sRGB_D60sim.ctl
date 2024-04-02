@@ -6,33 +6,6 @@
 // Output Device Transform - sRGB computer monitor (D60 simulation)
 //
 
-//
-// Summary :
-//  This transform is intended for use on a desktop computer monitor typical of 
-//  those used in motion picture visual effects production. These monitors may 
-//  occasionally be referred to as "sRGB" displays, however, the monitor for 
-//  which this transform is designed does not exactly match the specifications in 
-//  IEC 61966-2-1:1999.
-// 
-//  The assumed observer adapted white is D60, and the viewing environment is 
-//  that of a dim surround. 
-//
-//  The monitor specified is intended to be more typical of those found in 
-//  visual effects production.
-//
-// Display EOTF :
-//  The reference electro-optical transfer function specified in IEC 61966-2-1:1999.
-//  Note: This is *NOT* a gamma 2.2
-//
-// Assumed observer adapted white point:
-//         CIE 1931 chromaticities:    x            y
-//                                     0.32168      0.33767
-//
-// Viewing Environment:
-//   This transform has a compensation for viewing environment variables more typical 
-//   of those associated with video mastering.
-//
-
 
 
 

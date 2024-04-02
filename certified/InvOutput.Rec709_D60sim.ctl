@@ -8,6 +8,7 @@
 
 
 
+
 import "Library.Utilities";
 import "Library.Tonescale";
 import "Library.OutputTransform";
@@ -49,7 +50,7 @@ const Chromaticities encodingPri =      // Rec.709 D65
 //  0 - BT.1886 with gamma 2.4
 //  1 - sRGB IEC 61966-2-1:1999
 //  2 - gamma 2.2
-//  3 - gamma 2.4
+//  3 - gamma 2.6
 //  4 - ST.2084
 //  5 - HLG
 //  6 - display linear
