@@ -48,6 +48,8 @@ const Chromaticities encodingPri =      // P3 D65
     { 0.3127,  0.3290}
 };
 
+const float linear_scale_factor = 0.5;
+
 // EOTF
 //  0 - BT.1886 with gamma 2.4
 //  1 - sRGB IEC 61966-2-1:1999
@@ -103,11 +105,8 @@ void main (
                                      PARAMS, 
                                      limitingPri, 
                                      encodingPri,
-                                     eotf_enum );
-
-    // ---- Apply scale so that PQ gets encoded for 108 peak luminance ---- //
-    float scale_factor = Y_to_ST2084(108.) / Y_to_ST2084(216.);
-    out = mult_f_f3( scale_factor, out);
+                                     eotf_enum,
+                                     linear_scale_factor );
 
     rOut = out[0];
     gOut = out[1];

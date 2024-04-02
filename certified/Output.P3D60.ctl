@@ -46,6 +46,8 @@ const Chromaticities encodingPri =      // P3 D60
     { 0.32168, 0.33767}
 };
 
+const float linear_scale_factor = 1.0;
+
 // EOTF
 //  0 - BT.1886 with gamma 2.4
 //  1 - sRGB IEC 61966-2-1:1999
@@ -101,7 +103,8 @@ void main (
                                      PARAMS, 
                                      limitingPri, 
                                      encodingPri,
-                                     eotf_enum );
+                                     eotf_enum,
+                                     linear_scale_factor );
 
     rOut = out[0];
     gOut = out[1];

@@ -46,6 +46,8 @@ const Chromaticities encodingPri =      // P3 D65
     { 0.3127,  0.3290}
 };
 
+const float linear_scale_factor = 1.0;
+
 // EOTF
 //  0 - BT.1886 with gamma 2.4
 //  1 - sRGB IEC 61966-2-1:1999
@@ -92,7 +94,8 @@ void main (
                                      PARAMS,
                                      limitingPri,
                                      encodingPri,
-                                     eotf_enum );
+                                     eotf_enum,
+                                     linear_scale_factor );
 
     // ---- Inverse Output Transform ---- //
     float aces[3] = outputTransform_inv( XYZ,
