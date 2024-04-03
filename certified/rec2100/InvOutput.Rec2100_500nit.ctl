@@ -1,9 +1,9 @@
 
 // <ACEStransformID>urn:ampas:aces:transformId:v2.0:InvOutput.Academy.Rec2100_1000nit.a2.v1</ACEStransformID>
-// <ACESuserName>Inverse Rec.2100 1000 nit</ACESuserName>
+// <ACESuserName>Inverse Rec.2100 500 nit</ACESuserName>
 
 // 
-// Inverse Output Transform - Rec.2100 (1000 cd/m^2)
+// Inverse Output Transform - Rec.2100 (500 cd/m^2)
 //
 
 
@@ -21,15 +21,15 @@ import "Library.DisplayEncoding";
 // ---- ODT PARAMETERS BELOW ---- //
 
 // Limiting primaries and white point
-const Chromaticities limitingPri =      // Rec.709 D65
+const Chromaticities limitingPri =      // Rec.2020 D65
 {
-    { 0.6400,  0.3300},
-    { 0.3000,  0.6000},
-    { 0.1500,  0.0600},
+    { 0.7080,  0.2920},
+    { 0.1700,  0.7970},
+    { 0.1310,  0.0460},
     { 0.3127,  0.3290}
 };
 
-const float peakLuminance = 100.;       // cd/m^2 (nits)
+const float peakLuminance = 500.;       // cd/m^2 (nits)
 
 // Surround
 //  0 - dark
@@ -38,11 +38,11 @@ const float peakLuminance = 100.;       // cd/m^2 (nits)
 const int surround_enum = 1;
 
 // Display parameters
-const Chromaticities encodingPri =      // Rec.709 D65
+const Chromaticities encodingPri =      // Rec.2020 D65
 {
-    { 0.6400,  0.3300},
-    { 0.3000,  0.6000},
-    { 0.1500,  0.0600},
+    { 0.7080,  0.2920},
+    { 0.1700,  0.7970},
+    { 0.1310,  0.0460},
     { 0.3127,  0.3290}
 };
 
