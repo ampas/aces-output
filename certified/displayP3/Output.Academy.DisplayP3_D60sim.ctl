@@ -23,10 +23,10 @@ import "Lib.DisplayEncoding";
 // Limiting primaries and white point
 const Chromaticities limitingPri =      // P3 D60
 {
-    { 0.6400,  0.3300},
-    { 0.3000,  0.6000},
+    { 0.6800,  0.3200},
+    { 0.2650,  0.6900},
     { 0.1500,  0.0600},
-    { 0.32168,  0.33767}
+    { 0.32168, 0.33767}
 };
 
 const float peakLuminance = 100.;       // cd/m^2 (nits)
@@ -40,8 +40,8 @@ const int surround_enum = 1;
 // Display parameters
 const Chromaticities encodingPri =      // P3 D65
 {
-    { 0.6400,  0.3300},
-    { 0.3000,  0.6000},
+    { 0.6800,  0.3200},
+    { 0.2650,  0.6900},
     { 0.1500,  0.0600},
     { 0.3127,  0.3290}
 };
