@@ -3,7 +3,7 @@
 // <ACESuserName>sRGB (D60 sim)</ACESuserName>
 
 // 
-// Output Device Transform - sRGB computer monitor (D60 simulation)
+// Output Device Transform - sRGB computer monitor (D60 Simulation)
 //
 
 

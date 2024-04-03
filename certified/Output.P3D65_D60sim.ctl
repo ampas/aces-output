@@ -3,7 +3,7 @@
 // <ACESuserName>P3D65 (D60 sim)</ACESuserName>
 
 // 
-// Output Transform - P3D65 (D60 simulation)
+// Output Transform - P3D65 (D60 Simulation)
 //
 
 

@@ -3,7 +3,7 @@
 // <ACESuserName>Inverse sRGB (D60 sim)</ACESuserName>
 
 // 
-// Inverse Output Transform - sRGB (D60 simulation)
+// Inverse Output Transform - sRGB (D60 Simulation)
 //
 
 

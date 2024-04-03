@@ -3,7 +3,7 @@
 // <ACESuserName>Inverse P3D65 (D60 sim)</ACESuserName>
 
 // 
-// Inverse Output Transform - P3D65 (D60 simulation)
+// Inverse Output Transform - P3D65 (D60 Simulation)
 //
 
 

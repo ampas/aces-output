@@ -3,7 +3,7 @@
 // <ACESuserName>Rec.709 (D60 sim)</ACESuserName>
 
 // 
-// Output Transform - Rec.709 (D60 simulation)
+// Output Transform - Rec.709 (D60 Simulation)
 //
 
 

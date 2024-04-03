@@ -1,9 +1,9 @@
 
 // <ACEStransformID>urn:ampas:aces:transformId:v2.0:Output.Academy.Rec2020_P3D65limited.a2.v1</ACEStransformID>
-// <ACESuserName>Rec.2020 (P3D65 Limited)</ACESuserName>
+// <ACESuserName>Rec.2020 (P3 D65 Limited)</ACESuserName>
 
 // 
-// Output Transform - Rec.2020 (P3D65 Limited)
+// Output Transform - Rec.2020 (P3 D65 Limited)
 //
 
 

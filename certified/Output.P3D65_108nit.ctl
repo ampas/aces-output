@@ -1,9 +1,9 @@
 
-// <ACEStransformID>urn:ampas:aces:transformId:v2.0:ODT.Academy.P3D65_108nits.a2.v1</ACEStransformID>
-// <ACESuserName>Dolby Cinema</ACESuserName>
+// <ACEStransformID>urn:ampas:aces:transformId:v2.0:ODT.Academy.P3D65_108nit.a2.v1</ACEStransformID>
+// <ACESuserName>P3 D65 108 nit</ACESuserName>
 
 // 
-// Output Transform - P3D65 108 cd/m^2 peak (Dolby Cinema)
+// Output Transform - P3 D65 108 cd/m^2 peak (Dolby Cinema)
 //
 
 

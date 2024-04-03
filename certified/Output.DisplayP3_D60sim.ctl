@@ -3,7 +3,7 @@
 // <ACESuserName>DisplayP3</ACESuserName>
 
 // 
-// Output Transform - DisplayP3 (D60 simulation
+// Output Transform - DisplayP3 (D60 Simulation)
 //
 
 

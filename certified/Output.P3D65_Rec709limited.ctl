@@ -1,9 +1,9 @@
 
 // <ACEStransformID>urn:ampas:aces:transformId:v2.0:ODT.Academy.P3D65_Rec709limited.a2.v1</ACEStransformID>
-// <ACESuserName>P3D65 (Rec.709 Limited)</ACESuserName>
+// <ACESuserName>P3 D65 (Rec.709 Limited)</ACESuserName>
 
 // 
-// Output Transform - P3D65 (Rec.709 Limited)
+// Output Transform - P3 D65 (Rec.709 Limited)
 //
 
 

@@ -1,9 +1,9 @@
 
 // <ACEStransformID>urn:ampas:aces:transformId:v2.0:ODT.Academy.P3D60.a2.v1</ACEStransformID>
-// <ACESuserName>P3D60</ACESuserName>
+// <ACESuserName>P3 D60</ACESuserName>
 
 // 
-// Output Transform - P3D60
+// Output Transform - P3 D60
 //
 
 

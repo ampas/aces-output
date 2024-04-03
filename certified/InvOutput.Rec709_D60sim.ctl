@@ -3,7 +3,7 @@
 // <ACESuserName>Inverse Rec.709 (D60 sim)</ACESuserName>
 
 // 
-// Inverse Output Transform - Rec.709 (D60 simulation)
+// Inverse Output Transform - Rec.709 (D60 Simulation)
 //
 
 

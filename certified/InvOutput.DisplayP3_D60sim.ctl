@@ -3,7 +3,7 @@
 // <ACESuserName>Inverse DisplayP3 (D60 sim)</ACESuserName>
 
 // 
-// Inverse Output Transform - DisplayP3 (D60 simulation)
+// Inverse Output Transform - DisplayP3 (D60 Simulation)
 //
 
 
