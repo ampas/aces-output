@@ -9,10 +9,10 @@
 
 
 
-import "Library.Utilities";
-import "Library.Tonescale";
-import "Library.OutputTransform";
-import "Library.DisplayEncoding";
+import "Lib.Utilities";
+import "Lib.Tonescale";
+import "Lib.OutputTransform";
+import "Lib.DisplayEncoding";
 
 
 
