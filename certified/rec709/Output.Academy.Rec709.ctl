@@ -1,9 +1,9 @@
 
-// <ACEStransformID>urn:ampas:aces:transformId:v2.0:InvOutput.Academy.P3D65.a2.v1</ACEStransformID>
-// <ACESuserName>Inverse P3D65</ACESuserName>
+// <ACEStransformID>urn:ampas:aces:transformId:v2.0:Output.Academy.Rec709.a2.v1</ACEStransformID>
+// <ACESuserName>Rec.709</ACESuserName>
 
 // 
-// Inverse Output Transform - P3D65
+// Output Transform - Rec.709
 //
 
 
@@ -21,10 +21,10 @@ import "Lib.DisplayEncoding";
 // ---- ODT PARAMETERS BELOW ---- //
 
 // Limiting primaries and white point
-const Chromaticities limitingPri =      // P3 D65
+const Chromaticities limitingPri =      // Rec.709 D65
 {
-    { 0.6800,  0.3200},
-    { 0.2650,  0.6900},
+    { 0.6400,  0.3300},
+    { 0.3000,  0.6000},
     { 0.1500,  0.0600},
     { 0.3127,  0.3290}
 };
@@ -35,13 +35,13 @@ const float peakLuminance = 100.;       // cd/m^2 (nits)
 //  0 - dark
 //  1 - dim
 //  2 - average
-const int surround_enum = 1;
+// const int surround_enum = 1;
 
 // Display parameters
-const Chromaticities encodingPri =      // P3 D65
+const Chromaticities encodingPri =      // Rec.709 D65
 {
-    { 0.6800,  0.3200},
-    { 0.2650,  0.6900},
+    { 0.6400,  0.3300},
+    { 0.3000,  0.6000},
     { 0.1500,  0.0600},
     { 0.3127,  0.3290}
 };
@@ -56,9 +56,12 @@ const float linear_scale_factor = 1.0;
 //  4 - ST.2084
 //  5 - HLG
 //  6 - display linear
-const int eotf_enum = 3;
+const int eotf_enum = 0;
 
 // ---- ---- ---- ---- ---- ---- //
+
+
+
 
 
 
@@ -77,36 +80,36 @@ void main (
     output varying float gOut,
     output varying float bOut,
     output varying float aOut,
-    input varying float aIn = 1. 
+    input varying float aIn = 1.,
+    input varying int surround_enum = 1
 )
 {
-    // ----- Run initialization functions ----- //
-
+    // ----- Calculate parameters derived from luminance and primaries ----- //
     const ODTParams PARAMS = init_ODTParams( peakLuminance,
                                              limitingPri,
                                              encodingPri );
 
-    // ---- Assemble Input ---- //
-    float RGB[3] = {rIn, gIn, bIn};
+    // ---- Assemble Input ---- //    
+    float aces[3] = {rIn, gIn, bIn};
 
-    // ---- Display Decoding ---- //
-    float XYZ[3] = display_decoding( RGB,
-                                     PARAMS,
-                                     limitingPri,
+    // ---- Output Transform ---- //
+    float XYZ[3] = outputTransform_fwd( aces, 
+                                        peakLuminance, 
+                                        PARAMS, 
+                                        limitingPri, 
+                                        surround_enum );
+
+    // ---- Display Encoding ---- //
+    float out[3] = display_encoding( XYZ, 
+                                     PARAMS, 
+                                     limitingPri, 
                                      encodingPri,
                                      eotf_enum,
                                      linear_scale_factor );
 
-    // ---- Inverse Output Transform ---- //
-    float aces[3] = outputTransform_inv( XYZ,
-                                         peakLuminance, 
-                                         PARAMS, 
-                                         limitingPri, 
-                                         surround_enum );
-
-    rOut = aces[0];
-    gOut = aces[1];
-    bOut = aces[2];
+    rOut = out[0];
+    gOut = out[1];
+    bOut = out[2];
     aOut = aIn;
 
 }

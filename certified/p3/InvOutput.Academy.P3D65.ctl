@@ -1,9 +1,9 @@
 
-// <ACEStransformID>urn:ampas:aces:transformId:v2.0:InvOutput.Academy.P3D65_108nits.a2.v1</ACEStransformID>
-// <ACESuserName>Inverse Dolby Cinema</ACESuserName>
+// <ACEStransformID>urn:ampas:aces:transformId:v2.0:InvOutput.Academy.P3D65.a2.v1</ACEStransformID>
+// <ACESuserName>Inverse P3 D65</ACESuserName>
 
 // 
-// Inverse Output Transform - P3D65 108 cd/m^2 peak (Dolby Cinema)
+// Inverse Output Transform - P3 D65
 //
 
 
@@ -30,8 +30,6 @@ const Chromaticities limitingPri =      // P3 D65
 };
 
 const float peakLuminance = 100.;       // cd/m^2 (nits)
-// actual target is 108 nits, but we're using 216 to change how we distribute the 
-// additional dynamic range available to us
 
 // Surround
 //  0 - dark
@@ -48,7 +46,7 @@ const Chromaticities encodingPri =      // P3 D65
     { 0.3127,  0.3290}
 };
 
-const float linear_scale_factor = 0.5;
+const float linear_scale_factor = 1.0;
 
 // EOTF
 //  0 - BT.1886 with gamma 2.4
@@ -58,7 +56,7 @@ const float linear_scale_factor = 0.5;
 //  4 - ST.2084
 //  5 - HLG
 //  6 - display linear
-const int eotf_enum = 4;
+const int eotf_enum = 3;
 
 // ---- ---- ---- ---- ---- ---- //
 

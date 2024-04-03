@@ -1,9 +1,9 @@
 
 // <ACEStransformID>urn:ampas:aces:transformId:v2.0:InvOutput.Academy.P3D65_D60sim.a2.v1</ACEStransformID>
-// <ACESuserName>Inverse P3D65 (D60 sim)</ACESuserName>
+// <ACESuserName>Inverse P3 DCI (D60 sim)</ACESuserName>
 
 // 
-// Inverse Output Transform - P3D65 (D60 Simulation)
+// Inverse Output Transform - P3 DCI (D60 Simulation)
 //
 
 

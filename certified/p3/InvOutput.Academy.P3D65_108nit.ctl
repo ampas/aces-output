@@ -1,9 +1,9 @@
 
-// <ACEStransformID>urn:ampas:aces:transformId:v2.0:InvOutput.Academy.P3D60.a2.v1</ACEStransformID>
-// <ACESuserName>Inverse P3D60</ACESuserName>
+// <ACEStransformID>urn:ampas:aces:transformId:v2.0:InvOutput.Academy.P3D65_108nits.a2.v1</ACEStransformID>
+// <ACESuserName>Inverse Dolby Cinema</ACESuserName>
 
 // 
-// Inverse Output Transform - P3D60
+// Inverse Output Transform - P3 D65 108 cd/m^2 peak (Dolby Cinema)
 //
 
 
@@ -21,15 +21,17 @@ import "Lib.DisplayEncoding";
 // ---- ODT PARAMETERS BELOW ---- //
 
 // Limiting primaries and white point
-const Chromaticities limitingPri =      // P3 D60
+const Chromaticities limitingPri =      // P3 D65
 {
     { 0.6800,  0.3200},
     { 0.2650,  0.6900},
     { 0.1500,  0.0600},
-    { 0.32168, 0.33767}
+    { 0.3127,  0.3290}
 };
 
 const float peakLuminance = 100.;       // cd/m^2 (nits)
+// actual target is 108 nits, but we're using 216 to change how we distribute the 
+// additional dynamic range available to us
 
 // Surround
 //  0 - dark
@@ -38,15 +40,15 @@ const float peakLuminance = 100.;       // cd/m^2 (nits)
 const int surround_enum = 1;
 
 // Display parameters
-const Chromaticities encodingPri =      // P3 D60
+const Chromaticities encodingPri =      // P3 D65
 {
     { 0.6800,  0.3200},
     { 0.2650,  0.6900},
     { 0.1500,  0.0600},
-    { 0.32168, 0.33767}
+    { 0.3127,  0.3290}
 };
 
-const float linear_scale_factor = 1.0;
+const float linear_scale_factor = 0.5;
 
 // EOTF
 //  0 - BT.1886 with gamma 2.4
@@ -56,7 +58,7 @@ const float linear_scale_factor = 1.0;
 //  4 - ST.2084
 //  5 - HLG
 //  6 - display linear
-const int eotf_enum = 3;
+const int eotf_enum = 4;
 
 // ---- ---- ---- ---- ---- ---- //
 
