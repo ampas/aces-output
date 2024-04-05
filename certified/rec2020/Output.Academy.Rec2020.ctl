@@ -2,10 +2,6 @@
 // <ACEStransformID>urn:ampas:aces:transformId:v2.0:Output.Academy.Rec2020.a2.v1</ACEStransformID>
 // <ACESuserName>Rec.2020</ACESuserName>
 
-// 
-// Output Transform - Rec.2020
-//
-
 
 
 

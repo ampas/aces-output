@@ -2,10 +2,6 @@
 // <ACEStransformID>urn:ampas:aces:transformId:v2.0:InvOutput.Academy.sRGB_D60sim.a2.v1</ACEStransformID>
 // <ACESuserName>Inverse sRGB (D60 sim)</ACESuserName>
 
-// 
-// Inverse Output Transform - sRGB (D60 Simulation)
-//
-
 
 
 

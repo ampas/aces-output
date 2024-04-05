@@ -1,10 +1,6 @@
 
 // <ACEStransformID>urn:ampas:aces:transformId:v2.0:ODT.Academy.P3D65_108nit.a2.v1</ACEStransformID>
-// <ACESuserName>P3 D65 108 nit</ACESuserName>
-
-// 
-// Output Transform - P3 D65 108 cd/m^2 peak (Dolby Cinema)
-//
+// <ACESuserName>P3-D65 ST2084 (108 nit)</ACESuserName>
 
 
 
@@ -21,7 +17,7 @@ import "Lib.Academy.DisplayEncoding";
 // ---- ODT PARAMETERS BELOW ---- //
 
 // Limiting primaries and white point
-const Chromaticities limitingPri =      // P3 D65
+const Chromaticities limitingPri =      // P3-D65
 {
     { 0.6800,  0.3200},
     { 0.2650,  0.6900},
@@ -40,7 +36,7 @@ const float peakLuminance = 216.;       // cd/m^2 (nits)
 const int surround_enum = 1;
 
 // Display parameters
-const Chromaticities encodingPri =      // P3 D65
+const Chromaticities encodingPri =      // P3-D65
 {
     { 0.6800,  0.3200},
     { 0.2650,  0.6900},

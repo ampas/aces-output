@@ -1,10 +1,6 @@
 
-// <ACEStransformID>urn:ampas:aces:transformId:v2.0:InvOutput.Academy.Rec709.a2.v1</ACEStransformID>
-// <ACESuserName>Inverse Rec.709</ACESuserName>
-
-// 
-// Inverse Output Transform - Rec709
-//
+// <ACEStransformID>urn:ampas:aces:transformId:v2.0:InvOutput.Academy.sRGB.a2.v1</ACEStransformID>
+// <ACESuserName>Inverse sRGB</ACESuserName>
 
 
 
@@ -21,7 +17,7 @@ import "Lib.Academy.DisplayEncoding";
 // ---- ODT PARAMETERS BELOW ---- //
 
 // Limiting primaries and white point
-const Chromaticities limitingPri =      // Rec.709 D65
+const Chromaticities limitingPri =      // sRGB D65
 {
     { 0.6400,  0.3300},
     { 0.3000,  0.6000},
@@ -38,7 +34,7 @@ const float peakLuminance = 100.;       // cd/m^2 (nits)
 const int surround_enum = 1;
 
 // Display parameters
-const Chromaticities encodingPri =      // Rec.709 D65
+const Chromaticities encodingPri =      // sRGB D65
 {
     { 0.6400,  0.3300},
     { 0.3000,  0.6000},

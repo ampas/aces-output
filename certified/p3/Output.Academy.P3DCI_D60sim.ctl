@@ -1,6 +1,6 @@
 
-// <ACEStransformID>urn:ampas:aces:transformId:v2.0:InvOutput.Academy.Rec709.a2.v1</ACEStransformID>
-// <ACESuserName>Inverse Rec.709</ACESuserName>
+// <ACEStransformID>urn:ampas:aces:transformId:v2.0:ODT.Academy.P3DCI_D60sim.a2.v1</ACEStransformID>
+// <ACESuserName>P3-DCI (D60 sim)</ACESuserName>
 
 
 
@@ -17,12 +17,12 @@ import "Lib.Academy.DisplayEncoding";
 // ---- ODT PARAMETERS BELOW ---- //
 
 // Limiting primaries and white point
-const Chromaticities limitingPri =      // Rec.709 D65
+const Chromaticities limitingPri =      // P3-D60
 {
-    { 0.6400,  0.3300},
-    { 0.3000,  0.6000},
+    { 0.6800,  0.3200},
+    { 0.2650,  0.6900},
     { 0.1500,  0.0600},
-    { 0.3127,  0.3290}
+    { 0.32168,  0.33767}
 };
 
 const float peakLuminance = 100.;       // cd/m^2 (nits)
@@ -34,12 +34,12 @@ const float peakLuminance = 100.;       // cd/m^2 (nits)
 const int surround_enum = 1;
 
 // Display parameters
-const Chromaticities encodingPri =      // Rec.709 D65
+const Chromaticities encodingPri =      // P3-DCI
 {
-    { 0.6400,  0.3300},
-    { 0.3000,  0.6000},
+    { 0.6800,  0.3200},
+    { 0.2650,  0.6900},
     { 0.1500,  0.0600},
-    { 0.3127,  0.3290}
+    { 0.314,  0.351}
 };
 
 const float linear_scale_factor = 1.0;
@@ -52,9 +52,12 @@ const float linear_scale_factor = 1.0;
 //  4 - ST.2084
 //  5 - HLG
 //  6 - display linear
-const int eotf_enum = 0;
+const int eotf_enum = 3;
 
 // ---- ---- ---- ---- ---- ---- //
+
+
+
 
 
 
@@ -76,34 +79,32 @@ void main (
     input varying float aIn = 1. 
 )
 {
-    // ----- Run initialization functions ----- //
-
+    // ----- Calculate parameters derived from luminance and primaries ----- //
     const ODTParams PARAMS = init_ODTParams( peakLuminance,
                                              limitingPri,
                                              encodingPri );
 
-    // ---- Assemble Input ---- //
-    float RGB[3] = {rIn, gIn, bIn};
+    // ---- Assemble Input ---- //    
+    float aces[3] = {rIn, gIn, bIn};
 
-    // ---- Display Decoding ---- //
-    float XYZ[3] = display_decoding( RGB,
-                                     PARAMS,
-                                     limitingPri,
+    // ---- Output Transform ---- //
+    float XYZ[3] = outputTransform_fwd( aces, 
+                                        peakLuminance, 
+                                        PARAMS, 
+                                        limitingPri, 
+                                        surround_enum );
+
+    // ---- Display Encoding ---- //
+    float out[3] = display_encoding( XYZ, 
+                                     PARAMS, 
+                                     limitingPri, 
                                      encodingPri,
                                      eotf_enum,
                                      linear_scale_factor );
 
-
-    // ---- Inverse Output Transform ---- //
-    float aces[3] = outputTransform_inv( XYZ,
-                                         peakLuminance, 
-                                         PARAMS, 
-                                         limitingPri, 
-                                         surround_enum );
-
-    rOut = aces[0];
-    gOut = aces[1];
-    bOut = aces[2];
+    rOut = out[0];
+    gOut = out[1];
+    bOut = out[2];
     aOut = aIn;
 
 }

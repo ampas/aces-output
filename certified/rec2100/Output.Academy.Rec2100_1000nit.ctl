@@ -1,10 +1,6 @@
 
-// <ACEStransformID>urn:ampas:aces:transformId:v2.0:Output.Academy.Rec2100_1000nit.a2.v1</ACEStransformID>
-// <ACESuserName>Rec.2100 1000 nit</ACESuserName>
-
-// 
-// Output Transform - Rec.2100 (1000 cd/m^2)
-//
+// <ACEStransformID>urn:ampas:aces:transformId:v2.0:Output.Academy.Rec2020_ST2084_1000nit.a2.v1</ACEStransformID>
+// <ACESuserName>Rec.2020 ST2084 (1000 nit)</ACESuserName>
 
 
 

@@ -1,10 +1,6 @@
 
-// <ACEStransformID>urn:ampas:aces:transformId:v2.0:InvOutput.Academy.Rec20202.a2.v1</ACEStransformID>
+// <ACEStransformID>urn:ampas:aces:transformId:v2.0:InvOutput.Academy.Rec2020.a2.v1</ACEStransformID>
 // <ACESuserName>Inverse Rec.2020</ACESuserName>
-
-// 
-// Inverse Output Transform - Rec.2020
-//
 
 
 

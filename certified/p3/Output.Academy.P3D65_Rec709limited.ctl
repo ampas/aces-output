@@ -1,10 +1,6 @@
 
 // <ACEStransformID>urn:ampas:aces:transformId:v2.0:ODT.Academy.P3D65_Rec709limited.a2.v1</ACEStransformID>
-// <ACESuserName>P3 D65 (Rec.709 Limited)</ACESuserName>
-
-// 
-// Output Transform - P3 D65 (Rec.709 Limited)
-//
+// <ACESuserName>P3-D65 (Rec.709 Limited)</ACESuserName>
 
 
 
@@ -38,7 +34,7 @@ const float peakLuminance = 100.;       // cd/m^2 (nits)
 const int surround_enum = 1;
 
 // Display parameters
-const Chromaticities encodingPri =      // P3 D65
+const Chromaticities encodingPri =      // P3-D65
 {
     { 0.6800,  0.3200},
     { 0.2650,  0.6900},

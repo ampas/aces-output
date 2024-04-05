@@ -1,10 +1,6 @@
 
-// <ACEStransformID>urn:ampas:aces:transformId:v2.0:InvOutput.Academy.Rec2100_Rec709limited_100nitsim.a2.v1</ACEStransformID>
-// <ACESuserName>Inverse Rec.2100 (Rec.709 Limited 100 nit sim)</ACESuserName>
-
-// 
-// Inverse Output Transform - Rec.2100 (Rec.709 Limited 100 cd/m^2 Simulation)
-//
+// <ACEStransformID>urn:ampas:aces:transformId:v2.0:InvOutput.Academy.Rec2020_ST2084_Rec709limited_100nitsim.a2.v1</ACEStransformID>
+// <ACESuserName>Inverse Rec.2020 (Rec.709 Limited, 100 nit sim)</ACESuserName>
 
 
 

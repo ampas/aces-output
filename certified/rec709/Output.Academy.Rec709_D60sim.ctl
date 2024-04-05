@@ -2,10 +2,6 @@
 // <ACEStransformID>urn:ampas:aces:transformId:v2.0:Output.Academy.Rec709_D60sim.a2.v1</ACEStransformID>
 // <ACESuserName>Rec.709 (D60 sim)</ACESuserName>
 
-// 
-// Output Transform - Rec.709 (D60 Simulation)
-//
-
 
 
 

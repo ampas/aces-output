@@ -1,9 +1,9 @@
 
 // <ACEStransformID>urn:ampas:aces:transformId:v2.0:Output.Academy.Rec2100_P3D65limited_1000nit.a2.v1</ACEStransformID>
-// <ACESuserName>Rec.2100 1000 nit (P3 D65 Limited)</ACESuserName>
+// <ACESuserName>Rec.2100 1000 nit (P3-D65 Limited)</ACESuserName>
 
 // 
-// Output Transform - Rec.2100 1000 cd/m^2 (P3 D65 Limited)
+// Output Transform - Rec.2100 1000 cd/m^2 (P3-D65 Limited)
 //
 
 
@@ -21,7 +21,7 @@ import "Lib.Academy.DisplayEncoding";
 // ---- ODT PARAMETERS BELOW ---- //
 
 // Limiting primaries and white point
-const Chromaticities limitingPri =      // P3 D65
+const Chromaticities limitingPri =      // P3-D65
 {
     { 0.6800,  0.3200},
     { 0.2650,  0.6900},

@@ -1,10 +1,6 @@
 
 // <ACEStransformID>urn:ampas:aces:transformId:v2.0:Output.Academy.Rec2020_P3D65limited.a2.v1</ACEStransformID>
-// <ACESuserName>Rec.2020 (P3 D65 Limited)</ACESuserName>
-
-// 
-// Output Transform - Rec.2020 (P3 D65 Limited)
-//
+// <ACESuserName>Rec.2020 (P3-D65 Limited)</ACESuserName>
 
 
 
@@ -21,7 +17,7 @@ import "Lib.Academy.DisplayEncoding";
 // ---- ODT PARAMETERS BELOW ---- //
 
 // Limiting primaries and white point
-const Chromaticities limitingPri =      // P3 D65
+const Chromaticities limitingPri =      // P3-D65
 {
     { 0.6800,  0.3200},
     { 0.2650,  0.6900},

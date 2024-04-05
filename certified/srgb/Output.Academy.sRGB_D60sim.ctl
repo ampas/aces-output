@@ -2,10 +2,6 @@
 // <ACEStransformID>urn:ampas:aces:transformId:v2.0:Output.Academy.sRGB_D60sim.a2.v1</ACEStransformID>
 // <ACESuserName>sRGB (D60 sim)</ACESuserName>
 
-// 
-// Output Device Transform - sRGB computer monitor (D60 Simulation)
-//
-
 
 
 

@@ -2,10 +2,6 @@
 // <ACEStransformID>urn:ampas:aces:transformId:v2.0:Output.Academy.sRGB.a2.v1</ACEStransformID>
 // <ACESuserName>sRGB</ACESuserName>
 
-// 
-// Output Device Transform - sRGB computer monitor
-//
-
 
 
 

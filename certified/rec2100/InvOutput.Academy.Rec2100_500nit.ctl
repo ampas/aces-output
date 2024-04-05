@@ -1,10 +1,6 @@
 
-// <ACEStransformID>urn:ampas:aces:transformId:v2.0:InvOutput.Academy.Rec2100_1000nit.a2.v1</ACEStransformID>
-// <ACESuserName>Inverse Rec.2100 500 nit</ACESuserName>
-
-// 
-// Inverse Output Transform - Rec.2100 (500 cd/m^2)
-//
+// <ACEStransformID>urn:ampas:aces:transformId:v2.0:InvOutput.Academy.Rec2020_ST2084_500nit.a2.v1</ACEStransformID>
+// <ACESuserName>Inverse Rec.2020 ST2084 (500 nit)</ACESuserName>
 
 
 
