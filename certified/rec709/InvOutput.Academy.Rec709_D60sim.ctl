@@ -1,6 +1,6 @@
 
 // <ACEStransformID>urn:ampas:aces:transformId:v2.0:InvOutput.Academy.Rec709_D60sim.a2.v1</ACEStransformID>
-// <ACESuserName>Inverse Rec.709 (D60 sim)</ACESuserName>
+// <ACESuserName>Inverse Rec.709 (D60 simulation)</ACESuserName>
 
 
 

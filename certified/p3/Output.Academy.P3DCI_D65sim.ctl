@@ -1,6 +1,6 @@
 
 // <ACEStransformID>urn:ampas:aces:transformId:v2.0:ODT.Academy.P3DCI_D65sim.a2.v1</ACEStransformID>
-// <ACESuserName>P3-DCI (D65 sim)</ACESuserName>
+// <ACESuserName>P3-DCI (D65 simulation)</ACESuserName>
 
 
 

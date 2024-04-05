@@ -1,6 +1,6 @@
 
 // <ACEStransformID>urn:ampas:aces:transformId:v2.0:InvOutput.Academy.DisplayP3_D60sim.a2.v1</ACEStransformID>
-// <ACESuserName>Inverse DisplayP3 (D60 sim)</ACESuserName>
+// <ACESuserName>Inverse DisplayP3 (D60 simulation)</ACESuserName>
 
 
 

@@ -1,6 +1,6 @@
 
 // <ACEStransformID>urn:ampas:aces:transformId:v2.0:Output.Academy.DisplayP3.a2.v1</ACEStransformID>
-// <ACESuserName>DisplayP3</ACESuserName>
+// <ACESuserName>DisplayP3 (D60 simulation)</ACESuserName>
 
 
 

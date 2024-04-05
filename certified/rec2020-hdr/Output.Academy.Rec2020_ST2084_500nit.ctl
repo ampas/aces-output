@@ -1,6 +1,6 @@
 
-// <ACEStransformID>urn:ampas:aces:transformId:v2.0:ODT.Academy.P3DCI_D60sim.a2.v1</ACEStransformID>
-// <ACESuserName>P3-DCI (D60 simulation)</ACESuserName>
+// <ACEStransformID>urn:ampas:aces:transformId:v2.0:Output.Academy.Rec2020_ST2084_500nit.a2.v1</ACEStransformID>
+// <ACESuserName>Rec.2020 ST2084 (500 nit)</ACESuserName>
 
 
 
@@ -17,15 +17,15 @@ import "Lib.Academy.DisplayEncoding";
 // ---- ODT PARAMETERS BELOW ---- //
 
 // Limiting primaries and white point
-const Chromaticities limitingPri =      // P3-D60
+const Chromaticities limitingPri =      // Rec.2020 D65
 {
-    { 0.6800,  0.3200},
-    { 0.2650,  0.6900},
-    { 0.1500,  0.0600},
-    { 0.32168,  0.33767}
+    { 0.7080,  0.2920},
+    { 0.1700,  0.7970},
+    { 0.1310,  0.0460},
+    { 0.3127,  0.3290}
 };
 
-const float peakLuminance = 100.;       // cd/m^2 (nits)
+const float peakLuminance = 500.;       // cd/m^2 (nits)
 
 // Surround
 //  0 - dark
@@ -34,12 +34,12 @@ const float peakLuminance = 100.;       // cd/m^2 (nits)
 const int surround_enum = 1;
 
 // Display parameters
-const Chromaticities encodingPri =      // P3-DCI
+const Chromaticities encodingPri =      // Rec.2020 D65
 {
-    { 0.6800,  0.3200},
-    { 0.2650,  0.6900},
-    { 0.1500,  0.0600},
-    { 0.314,  0.351}
+    { 0.7080,  0.2920},
+    { 0.1700,  0.7970},
+    { 0.1310,  0.0460},
+    { 0.3127,  0.3290}
 };
 
 const float linear_scale_factor = 1.0;
@@ -52,7 +52,7 @@ const float linear_scale_factor = 1.0;
 //  4 - ST.2084
 //  5 - HLG
 //  6 - display linear
-const int eotf_enum = 3;
+const int eotf_enum = 4;
 
 // ---- ---- ---- ---- ---- ---- //
 
