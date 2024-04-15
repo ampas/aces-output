@@ -52,7 +52,7 @@ const float linear_scale_factor = 1.0;
 //  4 - ST.2084
 //  5 - HLG
 //  6 - display linear
-const int eotf_enum = 0;
+const int eotf_enum = 1;
 
 // ---- ---- ---- ---- ---- ---- //
 
