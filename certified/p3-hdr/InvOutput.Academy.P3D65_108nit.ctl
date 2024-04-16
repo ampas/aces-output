@@ -93,15 +93,16 @@ void main (
                                      PARAMS,
                                      limitingPri,
                                      encodingPri,
+                                     surround_enum,
                                      eotf_enum,
                                      linear_scale_factor );
+
 
     // ---- Inverse Output Transform ---- //
     float aces[3] = outputTransform_inv( XYZ,
                                          peakLuminance, 
                                          PARAMS, 
-                                         limitingPri, 
-                                         surround_enum );
+                                         limitingPri );
 
     rOut = aces[0];
     gOut = aces[1];

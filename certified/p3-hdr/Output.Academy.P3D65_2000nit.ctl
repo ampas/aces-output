@@ -91,15 +91,15 @@ void main (
     float XYZ[3] = outputTransform_fwd( aces, 
                                         peakLuminance, 
                                         PARAMS, 
-                                        limitingPri, 
-                                        surround_enum );
+                                        limitingPri );
 
     // ---- Display Encoding ---- //
     float out[3] = display_encoding( XYZ, 
                                      PARAMS, 
                                      limitingPri, 
-                                     encodingPri,
-                                     eotf_enum,
+                                     encodingPri, 
+                                     surround_enum, 
+                                     eotf_enum, 
                                      linear_scale_factor );
 
     rOut = out[0];

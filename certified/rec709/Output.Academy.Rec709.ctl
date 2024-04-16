@@ -31,7 +31,7 @@ const float peakLuminance = 100.;       // cd/m^2 (nits)
 //  0 - dark
 //  1 - dim
 //  2 - average
-// const int surround_enum = 1;
+const int surround_enum = 1;
 
 // Display parameters
 const Chromaticities encodingPri =      // Rec.709 D65
@@ -76,8 +76,7 @@ void main (
     output varying float gOut,
     output varying float bOut,
     output varying float aOut,
-    input varying float aIn = 1.,
-    input varying int surround_enum = 1
+    input varying float aIn = 1.
 )
 {
     // ----- Calculate parameters derived from luminance and primaries ----- //
@@ -92,15 +91,15 @@ void main (
     float XYZ[3] = outputTransform_fwd( aces, 
                                         peakLuminance, 
                                         PARAMS, 
-                                        limitingPri, 
-                                        surround_enum );
+                                        limitingPri );
 
     // ---- Display Encoding ---- //
     float out[3] = display_encoding( XYZ, 
                                      PARAMS, 
                                      limitingPri, 
-                                     encodingPri,
-                                     eotf_enum,
+                                     encodingPri, 
+                                     surround_enum, 
+                                     eotf_enum, 
                                      linear_scale_factor );
 
     rOut = out[0];
