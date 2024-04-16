@@ -97,7 +97,6 @@ void main (
                                      eotf_enum,
                                      linear_scale_factor );
 
-
     // ---- Inverse Output Transform ---- //
     float aces[3] = outputTransform_inv( XYZ,
                                          peakLuminance, 
