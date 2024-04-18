@@ -29,12 +29,6 @@ const float peakLuminance = 216.;       // cd/m^2 (nits)
 // actual target is 108 nits, but we're using 216 to change how we distribute the 
 // additional dynamic range available to us
 
-// Surround
-//  0 - dark
-//  1 - dim
-//  2 - average
-const int surround_enum = 1;
-
 // Display parameters
 const Chromaticities encodingPri =      // P3-D65
 {
@@ -43,8 +37,6 @@ const Chromaticities encodingPri =      // P3-D65
     { 0.1500,  0.0600},
     { 0.3127,  0.3290}
 };
-
-const float linear_scale_factor = 0.5;
 
 // EOTF
 //  0 - BT.1886 with gamma 2.4
@@ -62,6 +54,14 @@ const int eotf_enum = 4;
 
 
 
+// These parameters should be accessible if needed, but only modified for specific use cases explained further in the ACES documentation.
+// Surround
+//  0 - dark
+//  1 - dim
+//  2 - average
+const int surround_enum = 1;
+
+const float linear_scale_factor = 0.5;
 
 
 

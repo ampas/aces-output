@@ -27,12 +27,6 @@ const Chromaticities limitingPri =      // P3-D65
 
 const float peakLuminance = 4000.;       // cd/m^2 (nits)
 
-// Surround
-//  0 - dark
-//  1 - dim
-//  2 - average
-const int surround_enum = 1;
-
 // Display parameters
 const Chromaticities encodingPri =      // Rec.2020 D65
 {
@@ -41,8 +35,6 @@ const Chromaticities encodingPri =      // Rec.2020 D65
     { 0.1310,  0.0460},
     { 0.3127,  0.3290}
 };
-
-const float linear_scale_factor = 1.0;
 
 // EOTF
 //  0 - BT.1886 with gamma 2.4
@@ -60,6 +52,14 @@ const int eotf_enum = 4;
 
 
 
+// These parameters should be accessible if needed, but only modified for specific use cases explained further in the ACES documentation.
+// Surround
+//  0 - dark
+//  1 - dim
+//  2 - average
+const int surround_enum = 1;
+
+const float linear_scale_factor = 1.0;
 
 
 
