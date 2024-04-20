@@ -67,7 +67,32 @@ const float linear_scale_factor = 0.5;
 
 
 
+// Initialization functions
+// These only need to be calculated once and are done here at the global level to assure they are not done per pixel.
 
+// Calculate parameters derived from luminance and primaries of current transform
+const ODTParams PARAMS = init_ODTParams( peakLuminance,
+                                         limitingPri,
+                                         encodingPri );
+
+// Build tables
+// Reach gamut JMh
+const float REACH_GAMUT_TABLE[gamutTableSize][3] = make_gamut_table( REACH_PRI, 
+                                                                     peakLuminance );
+
+// Reach cusps at maxJ
+const float REACH_CUSP_TABLE[gamutTableSize][3] = make_reach_cusp_table( REACH_PRI, 
+                                                                  PARAMS.limitJmax, 
+                                                                  peakLuminance );
+
+// JMh of limiting gamut (used for final gamut mapping)
+const float GAMUT_CUSP_TABLE[gamutTableSize][3] = make_gamut_table( limitingPri, 
+                                                                    peakLuminance );
+
+// Gammas to use for approximating boundaries
+const float GAMUT_TOP_GAMMA[gamutTableSize] = make_upper_hull_gamma( GAMUT_CUSP_TABLE, 
+                                                                     PARAMS, 
+                                                                     peakLuminance );
 
 
 // Transform
@@ -82,12 +107,6 @@ void main (
     input varying float aIn = 1. 
 )
 {
-    // ----- Run initialization functions ----- //
-
-    const ODTParams PARAMS = init_ODTParams( peakLuminance,
-                                             limitingPri,
-                                             encodingPri );
-
     // ---- Assemble Input ---- //
     float RGB[3] = {rIn, gIn, bIn};
 
@@ -104,7 +123,11 @@ void main (
     float aces[3] = outputTransform_inv( XYZ,
                                          peakLuminance, 
                                          PARAMS, 
-                                         limitingPri );
+                                         limitingPri,
+                                         GAMUT_CUSP_TABLE, 
+                                         GAMUT_TOP_GAMMA, 
+                                         REACH_GAMUT_TABLE,
+                                         REACH_CUSP_TABLE );
 
     rOut = aces[0];
     gOut = aces[1];
