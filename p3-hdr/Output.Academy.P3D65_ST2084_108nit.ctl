@@ -81,8 +81,8 @@ const float REACH_GAMUT_TABLE[gamutTableSize][3] = make_gamut_table( REACH_PRI,
 
 // Reach cusps at maxJ
 const float REACH_CUSP_TABLE[gamutTableSize][3] = make_reach_cusp_table( REACH_PRI, 
-                                                                  PARAMS.limitJmax, 
-                                                                  peakLuminance );
+                                                                         PARAMS.limitJmax, 
+                                                                         peakLuminance );
 
 // JMh of limiting gamut (used for final gamut mapping)
 const float GAMUT_CUSP_TABLE[gamutTableSize][3] = make_gamut_table( limitingPri, 
