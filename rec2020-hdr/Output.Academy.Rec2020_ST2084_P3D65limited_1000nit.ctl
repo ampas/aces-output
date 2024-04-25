@@ -107,6 +107,7 @@ void main (
     output varying float aOut,
     input varying float aIn = 1. 
 )
+{
     // ---- Assemble Input ---- //    
     float aces[3] = {rIn, gIn, bIn};
 
