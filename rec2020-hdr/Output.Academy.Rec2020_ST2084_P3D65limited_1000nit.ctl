@@ -1,9 +1,9 @@
 
-// <ACEStransformID>urn:ampas:aces:transformId:v2.0:Output.Academy.Rec2100_P3D65limited_1000nit.a2.v1</ACEStransformID>
-// <ACESuserName>Rec.2100 1000 nit (P3-D65 Limited)</ACESuserName>
+// <ACEStransformID>urn:ampas:aces:transformId:v2.0:Output.Academy.Rec2020_P3D65limited_1000nit.a2.v1</ACEStransformID>
+// <ACESuserName>Rec.2020 1000 nit (P3-D65 Limited)</ACESuserName>
 
 // 
-// Output Transform - Rec.2100 1000 cd/m^2 (P3-D65 Limited)
+// Output Transform - Rec.2020 1000 cd/m^2 (P3-D65 Limited)
 //
 
 
