@@ -21,11 +21,6 @@ The `contrib` directory contains community-supplied transforms, provided as-is a
 - **Community Contributed Transforms**: The `contrib` directory contains additional community-supplied transforms. These are considered optional. They may provide useful extensions but vary in their testing and support. It is advisable to evaluate their reliability and suitability for your specific needs before integration.
 - **Updates and Maintenance**: Ensure your system includes the most recent updates by regularly incorporating new or revised transforms from the main subdirectories, keeping in line with the latest ACES specifications and industry practices.
 
-### Inverse Transforms ###
-Careful examination of the transforms list will show that not every forward transform has a corresponding inverse transform. In cases where the forward Output Transform has some set of gamut limiting primaries smaller than the display encoding primaries, the inverse for those limited versions have been omitted in favor of a generic inverse from the display encoding container.
-
-It is expected that, if needed, one could use an inverse for the maximum gamut encoded by the display rather than specifically "undo-ing" gamut limited values. In theory, inverse transforms using the specific limiting gamut should be unnecessary, although in practice users may find slight differences in behavior if the make and use an inverse that explicitly accounts for the limiting gamut rather than assuming a generic gamut the size of the display container.
-
 ### Identical outputs ###
 Though separate transforms, in practice the code values output by the P3D65 and P3D60 transforms are identical if compared "by the numbers". This is because the outputs are intended to be viewed on different monitors each set such that equal code values produce the chromaticity of either D65 or D60. While we could easily have a single "P3 for equal code value output" transform, each exists with its own name for explicitness and to avoid confusion. Use the one that is appropriate to your projector white point setting and assumed observer adapted white.
 
