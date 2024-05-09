@@ -107,8 +107,6 @@ void main (
     // ---- Assemble Input ---- //
     float RGB[3] = {rIn, gIn, bIn};
 
-print("RGB:\t"); print_f3( RGB);
-
     // ---- Display Decoding ---- //
     float XYZ[3] = display_decoding( RGB,
                                      PARAMS,
@@ -117,8 +115,6 @@ print("RGB:\t"); print_f3( RGB);
                                      surround_enum,
                                      eotf_enum,
                                      linear_scale_factor );
-
-print("XYZ:\t"); print_f3( XYZ);
 
     // ---- Inverse Output Transform ---- //
     float aces[3] = outputTransform_inv( XYZ,
@@ -129,8 +125,6 @@ print("XYZ:\t"); print_f3( XYZ);
                                          GAMUT_TOP_GAMMA, 
                                          REACH_GAMUT_TABLE,
                                          REACH_CUSP_TABLE );
-
-print("aces:\t"); print_f3( aces);
 
     rOut = aces[0];
     gOut = aces[1];
