@@ -26,7 +26,7 @@ const Chromaticities limitingPri =      // P3-D65
     { 0.3127,  0.3290}
 };
 
-const float peakLuminance = 100.;       // cd/m^2 (nits)
+const float peakLuminance = 216.;       // cd/m^2 (nits)
 // actual target is 108 nits, but we're using 216 to change how we distribute the 
 // additional dynamic range available to us
 
