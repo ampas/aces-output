@@ -12,10 +12,10 @@ import "Lib.Academy.DisplayEncoding";
 // Chromaticities of limiting primaries and white point
 const Chromaticities limitingPri = // P3 Primaries / D65 White
     {
-        { 0.6800,  0.3200},
-        { 0.2650,  0.6900},
-        { 0.1500,  0.0600},
-        { 0.3127,  0.3290}
+        {0.6800,  0.3200},
+        {0.2650,  0.6900},
+        {0.1500,  0.0600},
+        {0.3127,  0.3290}
     };
     
 const float peakLuminance = 1000.; // luminance the tone scale highlight rolloff will target in cd/m^2 (nits)
@@ -25,10 +25,10 @@ const bool scale_white = false;   // apply scaling to compress output so that la
 // Chromaticities of display primaries and white point
 const Chromaticities encodingPri = // Rec.2020 Primaries / D65 White
     {
-        { 0.7080,  0.2920},
-        { 0.1700,  0.7970},
-        { 0.1310,  0.0460},
-        { 0.3127,  0.3290}
+        {0.7080,  0.2920},
+        {0.1700,  0.7970},
+        {0.1310,  0.0460},
+        {0.3127,  0.3290}
     };
 
 // EOTF of display (output is encoded with the inverse EOTF)

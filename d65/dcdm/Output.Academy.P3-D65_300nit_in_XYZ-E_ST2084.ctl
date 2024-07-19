@@ -12,10 +12,10 @@ import "Lib.Academy.DisplayEncoding";
 // Chromaticities of limiting primaries and white point
 const Chromaticities limitingPri = // P3 Primaries / D65 White
     {
-        { 0.6800,  0.3200},
-        { 0.2650,  0.6900},
-        { 0.1500,  0.0600},
-        { 0.3127,  0.3290}
+        {0.6800,  0.3200},
+        {0.2650,  0.6900},
+        {0.1500,  0.0600},
+        {0.3127,  0.3290}
     };
     
 const float peakLuminance = 625;  // = 300 * (100/48); 
@@ -26,10 +26,10 @@ const bool scale_white = false;   // apply scaling to compress output so that la
 // Chromaticities of display primaries and white point
 const Chromaticities encodingPri = // XYZ Primaries / Equal Energy ("E") White
     {
-        { 1.0,  0.0},
-        { 0.0,  1.0},
-        { 0.0,  0.0},
-        { 1/3,  1/3}
+        {1.0,  0.0},
+        {0.0,  1.0},
+        {0.0,  0.0},
+        {1/3,  1/3}
     };
 
 // EOTF of display (output is encoded with the inverse EOTF)
