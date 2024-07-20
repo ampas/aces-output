@@ -1,5 +1,5 @@
 // <ACEStransformID>urn:ampas:aces:transformID:v2.0:InvOutput.Academy.P3-D65_1000nit_in_P3-D65_sRGB-Piecewise.a2.v1</ACEStransformID>
-// <ACESuserName>Inverse DisplayP3 1000 nit</ACESuserName>
+// <ACESuserName>Inverse Extended DisplayP3 (1000 nit)</ACESuserName>
 
 import "Lib.Academy.Utilities";
 import "Lib.Academy.Tonescale";
