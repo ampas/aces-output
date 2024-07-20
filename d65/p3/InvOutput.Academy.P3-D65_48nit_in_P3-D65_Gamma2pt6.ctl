@@ -1,5 +1,5 @@
 // <ACEStransformID>urn:ampas:aces:transformID:v2.0:InvOutput.Academy.P3-D65_48nit_in_P3-D65_Gamma2pt6.a2.v1</ACEStransformID>
-// <ACESuserName>Inverse Inverse Inverse Inverse Inverse Inverse Inverse Inverse Inverse Inverse Inverse Inverse Inverse Inverse Inverse Inverse Inverse Inverse Inverse Inverse Inverse Inverse Inverse Inverse Inverse Inverse Inverse Inverse Inverse Inverse Inverse Inverse Inverse P3-D65</ACESuserName>
+// <ACESuserName>Inverse P3-D65</ACESuserName>
 
 import "Lib.Academy.Utilities";
 import "Lib.Academy.Tonescale";

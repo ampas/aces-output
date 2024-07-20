@@ -1,5 +1,5 @@
 // <ACEStransformID>urn:ampas:aces:transformID:v2.0:InvOutput.Academy.P3-D65_48nit_in_XYZ-E_Gamma2pt6.a2.v1</ACEStransformID>
-// <ACESuserName>Inverse Inverse DCDM (P3-D65 Limited)</ACESuserName>
+// <ACESuserName>Inverse DCDM (P3-D65 Limited)</ACESuserName>
 
 import "Lib.Academy.Utilities";
 import "Lib.Academy.Tonescale";

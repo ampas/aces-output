@@ -1,5 +1,5 @@
 // <ACEStransformID>urn:ampas:aces:transformID:v2.0:InvOutput.Academy.P3-D60_100nit_in_P3-D65_sRGB-Piecewise.a2.v1</ACEStransformID>
-// <ACESuserName>Inverse Inverse DisplayP3 (D60 simulation)</ACESuserName>
+// <ACESuserName>Inverse DisplayP3 (D60 simulation)</ACESuserName>
 
 import "Lib.Academy.Utilities";
 import "Lib.Academy.Tonescale";
