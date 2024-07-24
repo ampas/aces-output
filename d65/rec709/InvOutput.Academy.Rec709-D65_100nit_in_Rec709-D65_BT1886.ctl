@@ -1,5 +1,5 @@
-// <ACEStransformID>urn:ampas:aces:transformID:v2.0:InvOutput.Academy.Rec709-D65_100nit_in_Rec709-D65_Gamma2pt2.a2.v1</ACEStransformID>
-// <ACESuserName>Inverse sRGB Gamma 2.2</ACESuserName>
+// <ACEStransformID>urn:ampas:aces:transformID:v2.0:InvOutput.Academy.Rec709-D65_100nit_in_Rec709-D65_BT1886.a2.v1</ACEStransformID>
+// <ACESuserName>Inverse Rec.709 BT.1886</ACESuserName>
 
 import "Lib.Academy.Utilities";
 import "Lib.Academy.Tonescale";
