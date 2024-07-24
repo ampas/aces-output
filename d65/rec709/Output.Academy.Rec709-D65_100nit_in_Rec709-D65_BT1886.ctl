@@ -39,7 +39,7 @@ const Chromaticities encodingPri = // Rec.709 Primaries / D65 White
 //  4 - BT.1886 with gamma 2.4
 //  5 - gamma 2.2
 //  6 - sRGB IEC 61966-2-1:1999
-const int eotf_enum = 5;
+const int eotf_enum = 4;
 
 // ---- ---- ---- ---- ---- ---- //
 
