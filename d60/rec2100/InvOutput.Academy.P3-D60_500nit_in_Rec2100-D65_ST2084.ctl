@@ -98,6 +98,7 @@ void main(
                                      PARAMS,
                                      limitingPri,
                                      encodingPri,
+                                     scale_white, 
                                      surround_enum,
                                      eotf_enum,
                                      linear_scale_factor );
