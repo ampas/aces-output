@@ -10,7 +10,7 @@ import "Lib.Academy.DisplayEncoding";
 
 // Rendering intent
 // Chromaticities of limiting primaries and white point
-const Chromaticities encodingPri = // Rec.2100 Primaries / ACES "~D60" White
+const Chromaticities limitingPri = // Rec.2100 Primaries / ACES "~D60" White
     {
         {0.7080,  0.2920},
         {0.1700,  0.7970},
