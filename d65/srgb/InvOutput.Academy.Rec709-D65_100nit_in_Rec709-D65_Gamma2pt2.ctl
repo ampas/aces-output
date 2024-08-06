@@ -1,4 +1,4 @@
-// <ACEStransformID>urn:ampas:aces:transformID:v2.0:InvOutput.Academy.Rec709-D65_100nit_in_Rec709-D65_Gamma2pt2.a2.v1</ACEStransformID>
+// <ACEStransformID>urn:ampas:aces:transformId:v2.0:InvOutput.Academy.Rec709-D65_100nit_in_Rec709-D65_Gamma2pt2.a2.v1</ACEStransformID>
 // <ACESuserName>Inverse sRGB Gamma 2.2</ACESuserName>
 
 import "Lib.Academy.Utilities";

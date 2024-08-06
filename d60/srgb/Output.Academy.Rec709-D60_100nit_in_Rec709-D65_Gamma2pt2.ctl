@@ -1,4 +1,4 @@
-// <ACEStransformID>urn:ampas:aces:transformID:v2.0:Output.Academy.Rec709-D60_100nit_in_Rec709-D65_Gamma2pt2.a2.v1</ACEStransformID>
+// <ACEStransformID>urn:ampas:aces:transformId:v2.0:Output.Academy.Rec709-D60_100nit_in_Rec709-D65_Gamma2pt2.a2.v1</ACEStransformID>
 // <ACESuserName>sRGB Gamma 2.2 (D60 simulation)</ACESuserName>
 
 import "Lib.Academy.Utilities";

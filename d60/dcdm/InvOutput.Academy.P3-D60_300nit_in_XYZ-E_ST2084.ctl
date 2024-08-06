@@ -1,4 +1,4 @@
-// <ACEStransformID>urn:ampas:aces:transformID:v2.0:InvOutput.Academy.P3-D60_300nit_in_XYZ-E_ST2084.a2.v1</ACEStransformID>
+// <ACEStransformID>urn:ampas:aces:transformId:v2.0:InvOutput.Academy.P3-D60_300nit_in_XYZ-E_ST2084.a2.v1</ACEStransformID>
 // <ACESuserName>Inverse DCDM (300 nit P3-D60 Limited)</ACESuserName>
 
 import "Lib.Academy.Utilities";

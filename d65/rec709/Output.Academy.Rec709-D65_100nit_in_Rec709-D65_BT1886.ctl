@@ -1,4 +1,4 @@
-// <ACEStransformID>urn:ampas:aces:transformID:v2.0:Output.Academy.Rec709-D65_100nit_in_Rec709-D65_BT1886.a2.v1</ACEStransformID>
+// <ACEStransformID>urn:ampas:aces:transformId:v2.0:Output.Academy.Rec709-D65_100nit_in_Rec709-D65_BT1886.a2.v1</ACEStransformID>
 // <ACESuserName>Rec.709 BT.1886</ACESuserName>
 
 import "Lib.Academy.Utilities";
