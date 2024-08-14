@@ -43,13 +43,6 @@ const int eotf_enum = 1;
 
 // ---- ---- ---- ---- ---- ---- //
 
-// These parameters should be accessible if needed, but only modified for specific use cases explained further in the ACES documentation.
-// Surround
-//  0 - dark
-//  1 - dim
-//  2 - average
-const int surround_enum = 1;
-
 const float linear_scale_factor = 1.0;
 
 // Initialization functions
@@ -96,13 +89,11 @@ void main(
     // ---- Display Decoding ---- //
     float XYZ[3] = display_decoding( RGB,
                                      PARAMS,
-                                     limitingPri,
-                                     encodingPri,
-                                     scale_white,
-                                     surround_enum,
                                      eotf_enum,
                                      linear_scale_factor );
 
+    XYZ = white_limiting( XYZ, PARAMS, scale_white, true);
+    
     // ---- Inverse Output Transform ---- //
     float aces[3] = outputTransform_inv( XYZ,
                                          peakLuminance, 

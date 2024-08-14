@@ -44,13 +44,6 @@ const int eotf_enum = 1;
 
 // ---- ---- ---- ---- ---- ---- //
 
-// These parameters should be accessible if needed, but only modified for specific use cases explained further in the ACES documentation.
-// Surround
-//  0 - dark
-//  1 - dim
-//  2 - average
-const int surround_enum = 1;
-
 const float linear_scale_factor = 0.48;
 
 // Initialization functions
@@ -104,13 +97,11 @@ void main(
                                        REACH_GAMUT_TABLE,
                                        REACHM_TABLE);
 
+    XYZ = white_limiting( XYZ, PARAMS, scale_white);
+
     // ---- Display Encoding ---- //
     float out[3] = display_encoding(XYZ,
                                     PARAMS,
-                                    limitingPri,
-                                    encodingPri,
-                                    scale_white,
-                                    surround_enum,
                                     eotf_enum,
                                     linear_scale_factor);
 
