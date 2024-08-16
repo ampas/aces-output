@@ -20,7 +20,7 @@ const Chromaticities limitingPri = // P3 Primaries / ACES "~D60" White
     
 const float peakLuminance = 100;  // = 48 * (100/48); 
                                   // luminance the tone scale highlight rolloff will target in cd/m^2 (nits)
-const bool scale_white = true;   // apply scaling to compress output so that largest channel hits 1.0; usually enabled when using a limiting white different from the encoding white
+const bool scale_white = false;   // apply scaling to compress output so that largest channel hits 1.0; usually enabled when using a limiting white different from the encoding white
 
 // Encoding
 // Chromaticities of display primaries and white point
