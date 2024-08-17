@@ -29,7 +29,7 @@ const Chromaticities encodingPri = // XYZ Primaries / Equal Energy ("E") White
         {1.0,  0.0},
         {0.0,  1.0},
         {0.0,  0.0},
-        {1/3,  1/3}
+        {1/3.,  1/3.}
     };
 
 // EOTF of display (output is encoded with the inverse EOTF)
