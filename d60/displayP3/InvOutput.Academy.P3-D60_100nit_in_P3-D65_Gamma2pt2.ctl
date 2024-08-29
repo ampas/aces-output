@@ -54,10 +54,6 @@ const ODTParams PARAMS = init_ODTParams(peakLuminance,
                                         encodingPri);
 
 // Build tables
-// Reach gamut JMh
-const float REACH_GAMUT_TABLE[][3] = make_gamut_table(REACH_PRI,
-                                                      peakLuminance);
-
 // Reach cusps at maxJ
 const float REACHM_TABLE[] = make_reachM_table(REACH_PRI,
                                                PARAMS.limitJmax,
@@ -101,7 +97,6 @@ void main(
                                          limitingPri,
                                          GAMUT_CUSP_TABLE, 
                                          GAMUT_TOP_GAMMA, 
-                                         REACH_GAMUT_TABLE,
                                          REACHM_TABLE );
 
     rOut = aces[0];
