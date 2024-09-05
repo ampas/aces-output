@@ -4,7 +4,7 @@ Reference, or "golden", images have been rendered through each transform in orde
 
 One source image is pictorial and the other is a synthetically generated test chart.
 
-Reference images are hosted on [Dropbox](https://www.dropbox.com/scl/fo/8izhqlyxhih6n0x0jl39e/AEQbsJKZXNeKLO-IBFVdIZA?rlkey=s38hs6e89stvkk0rxfuyk13bn&dl=0) and can be downloaded individually or as a zip file.
+Reference images are hosted on [Dropbox](https://www.dropbox.com/scl/fo/zbrp6siai5r9wgasdlmle/ALS649lq8bJ_iMwHEh0xfxw?rlkey=41zj6by2t39ckzt0caydb7s91&dl=0) and can be downloaded individually or as a zip file.
 
 ### Confirmation ###
 To confirm your implementation of each transform:
