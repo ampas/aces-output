@@ -1,5 +1,5 @@
-// <ACEStransformID>urn:ampas:aces:transformId:v2.0:Output.Academy.Rec709-D65_100nit_in_Rec2100-D65_ST2084.a2.v1</ACEStransformID>
-// <ACESuserName>Rec.2100 ST2084 (100 nit Rec.709 Limited)</ACESuserName>
+// <ACEStransformID>urn:ampas:aces:transformId:v2.0:InvOutput.Academy.Rec709-D65_100nit_in_P3-D65_ST2084.a2.v1</ACEStransformID>
+// <ACESuserName>Inverse P3-D65 ST2084 (100 nit Rec.709 Limited)</ACESuserName>
 
 import "Lib.Academy.Utilities";
 import "Lib.Academy.Tonescale";
@@ -17,17 +17,17 @@ const Chromaticities limitingPri = // Rec.709 Primaries / D65 White
         {0.1500, 0.0600},
         {0.3127, 0.3290}
     };
-
+    
 const float peakLuminance = 100.; // luminance the tone scale highlight rolloff will target in cd/m^2 (nits)
 const bool scale_white = false;   // apply scaling to compress output so that largest channel hits 1.0; usually enabled when using a limiting white different from the encoding white
 
 // Encoding
 // Chromaticities of display primaries and white point
-const Chromaticities encodingPri = // Rec.2100 Primaries / D65 White
+const Chromaticities encodingPri = // P3 Primaries / D65 White
     {
-        {0.7080,  0.2920},
-        {0.1700,  0.7970},
-        {0.1310,  0.0460},
+        {0.6800,  0.3200},
+        {0.2650,  0.6900},
+        {0.1500,  0.0600},
         {0.3127,  0.3290}
     };
 
@@ -48,7 +48,7 @@ const float linear_scale_factor = 1.0;
 // Initialization functions
 // These only need to be calculated once and are done here at the global level to assure they are not done per pixel.
 
-// Calculate parameters derived from luminance and primaries
+// Calculate parameters derived from luminance and primaries of current transform
 const ODTParams ODT_PARAMS = init_ODTParams(peakLuminance,
                                             limitingPri);
 
@@ -67,25 +67,25 @@ void main(
     input varying float aIn = 1.)
 {
     // ---- Assemble Input ---- //
-    float aces[3] = {rIn, gIn, bIn};
+    float cv[3] = {rIn, gIn, bIn};
 
-    // ---- Output Transform ---- //
-    float rgb[3] = outputTransform_fwd(aces, ODT_PARAMS);
+    // ---- Display Decoding ---- //
+    float rgb[3] = display_decoding(cv, invert_f33(MATRIX_limit_to_display), eotf_enum, linear_scale_factor);
+
+    // ---- Undo white scaling, needed if limiting white != encoding white ----
+    if (scale_white)
+    {
+        rgb = apply_white_scale(rgb, MATRIX_limit_to_display, true);
+    }
 
     // ---- Clamp to peak luminance ---- //
     rgb = clamp_f3(rgb, 0.0, peakLuminance / ref_luminance);
 
-    // ---- Scale white, needed if limiting white != encoding white ----
-    if (scale_white)
-    {
-        rgb = apply_white_scale(rgb, MATRIX_limit_to_display, false);
-    }
+    // ---- Inverse Output Transform ---- //
+    float inv_aces[3] = outputTransform_inv(rgb, ODT_PARAMS);
 
-    // ---- Display Encoding ---- //
-    float cv[3] = display_encoding(rgb, MATRIX_limit_to_display, eotf_enum, linear_scale_factor);
-
-    rOut = cv[0];
-    gOut = cv[1];
-    bOut = cv[2];
+    rOut = inv_aces[0];
+    gOut = inv_aces[1];
+    bOut = inv_aces[2];
     aOut = aIn;
 }

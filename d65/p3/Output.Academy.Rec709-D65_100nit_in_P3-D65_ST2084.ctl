@@ -1,5 +1,5 @@
-// <ACEStransformID>urn:ampas:aces:transformId:v2.0:Output.Academy.Rec709-D65_100nit_in_Rec2100-D65_ST2084.a2.v1</ACEStransformID>
-// <ACESuserName>Rec.2100 ST2084 (100 nit Rec.709 Limited)</ACESuserName>
+// <ACEStransformID>urn:ampas:aces:transformId:v2.0:Output.Academy.Rec709-D65_100nit_in_P3-D65_ST2084.a2.v1</ACEStransformID>
+// <ACESuserName>P3-D65 ST2084 (100 nit Rec.709 Limited)</ACESuserName>
 
 import "Lib.Academy.Utilities";
 import "Lib.Academy.Tonescale";
@@ -17,17 +17,17 @@ const Chromaticities limitingPri = // Rec.709 Primaries / D65 White
         {0.1500, 0.0600},
         {0.3127, 0.3290}
     };
-
+    
 const float peakLuminance = 100.; // luminance the tone scale highlight rolloff will target in cd/m^2 (nits)
 const bool scale_white = false;   // apply scaling to compress output so that largest channel hits 1.0; usually enabled when using a limiting white different from the encoding white
 
 // Encoding
 // Chromaticities of display primaries and white point
-const Chromaticities encodingPri = // Rec.2100 Primaries / D65 White
+const Chromaticities encodingPri = // P3 Primaries / D65 White
     {
-        {0.7080,  0.2920},
-        {0.1700,  0.7970},
-        {0.1310,  0.0460},
+        {0.6800,  0.3200},
+        {0.2650,  0.6900},
+        {0.1500,  0.0600},
         {0.3127,  0.3290}
     };
 
