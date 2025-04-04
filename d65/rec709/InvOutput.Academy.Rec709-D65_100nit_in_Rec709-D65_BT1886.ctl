@@ -49,24 +49,11 @@ const float linear_scale_factor = 1.0;
 // These only need to be calculated once and are done here at the global level to assure they are not done per pixel.
 
 // Calculate parameters derived from luminance and primaries of current transform
-const ODTParams PARAMS = init_ODTParams(peakLuminance,
-                                        limitingPri,
-                                        encodingPri);
+const ODTParams ODT_PARAMS = init_ODTParams(peakLuminance,
+                                            limitingPri);
 
-// Build tables
-// Reach cusps at maxJ
-const float REACHM_TABLE[] = make_reachM_table(REACH_PRI,
-                                               PARAMS.limitJmax,
-                                               peakLuminance);
-
-// JMh of limiting gamut (used for final gamut mapping)
-const float GAMUT_CUSP_TABLE[][3] = make_gamut_table(limitingPri,
-                                                     peakLuminance);
-
-// Gammas to use for approximating boundaries
-const float GAMUT_TOP_GAMMA[] = make_upper_hull_gamma_table(GAMUT_CUSP_TABLE,
-                                                            PARAMS,
-                                                            peakLuminance); //
+const float MATRIX_limit_to_display[3][3] = mult_f33_f33(RGBtoXYZ_f33(limitingPri, 1.0),
+                                                         XYZtoRGB_f33(encodingPri, 1.0));
 
 // Transform
 void main(
@@ -80,27 +67,25 @@ void main(
     input varying float aIn = 1.)
 {
     // ---- Assemble Input ---- //
-    float RGB[3] = {rIn, gIn, bIn};
+    float cv[3] = {rIn, gIn, bIn};
 
     // ---- Display Decoding ---- //
-    float XYZ[3] = display_decoding( RGB,
-                                     PARAMS,
-                                     eotf_enum,
-                                     linear_scale_factor );
+    float rgb[3] = display_decoding(cv, invert_f33(MATRIX_limit_to_display), eotf_enum, linear_scale_factor);
 
-    XYZ = white_limiting( XYZ, PARAMS, scale_white, true);
+    // ---- Undo white scaling, needed if limiting white != encoding white ----
+    if (scale_white)
+    {
+        rgb = apply_white_scale(rgb, MATRIX_limit_to_display, true);
+    }
+
+    // ---- Clamp to peak luminance ---- //
+    rgb = clamp_f3(rgb, 0.0, peakLuminance / ref_luminance);
 
     // ---- Inverse Output Transform ---- //
-    float aces[3] = outputTransform_inv( XYZ,
-                                         peakLuminance, 
-                                         PARAMS, 
-                                         limitingPri,
-                                         GAMUT_CUSP_TABLE, 
-                                         GAMUT_TOP_GAMMA, 
-                                         REACHM_TABLE );
+    float inv_aces[3] = outputTransform_inv(rgb, ODT_PARAMS);
 
-    rOut = aces[0];
-    gOut = aces[1];
-    bOut = aces[2];
+    rOut = inv_aces[0];
+    gOut = inv_aces[1];
+    bOut = inv_aces[2];
     aOut = aIn;
 }
