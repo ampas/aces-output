@@ -1,3 +1,6 @@
+// SPDX-License-Identifier: Apache-2.0
+// Copyright Contributors to the ACES Project.
+
 // <ACEStransformID>urn:ampas:aces:transformId:v2.0:Output.Academy.P3-D60_1000nit_in_Rec2100-D65_HLG.a2.v1</ACEStransformID>
 // <ACESuserName>Rec.2100 HLG (1000 nit P3-D60 Limited)</ACESuserName>
 

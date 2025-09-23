@@ -1,3 +1,6 @@
+// SPDX-License-Identifier: Apache-2.0
+// Copyright Contributors to the ACES Project.
+
 // <ACEStransformID>urn:ampas:aces:transformId:v2.0:InvOutput.Academy.Rec709-D60_100nit_in_P3-D65_ST2084.a2.v1</ACEStransformID>
 // <ACESuserName>Inverse P3-D65 ST2084 (100 nit Rec.709 Limited) (D60 simulation)</ACESuserName>
 

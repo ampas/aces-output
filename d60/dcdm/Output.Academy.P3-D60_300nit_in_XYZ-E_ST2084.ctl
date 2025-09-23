@@ -1,3 +1,6 @@
+// SPDX-License-Identifier: Apache-2.0
+// Copyright Contributors to the ACES Project.
+
 // <ACEStransformID>urn:ampas:aces:transformId:v2.0:Output.Academy.P3-D60_300nit_in_XYZ-E_ST2084.a2.v1</ACEStransformID>
 // <ACESuserName>DCDM (300 nit P3-D60 Limited)</ACESuserName>
 

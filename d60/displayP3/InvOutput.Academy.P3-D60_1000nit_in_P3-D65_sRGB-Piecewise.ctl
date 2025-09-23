@@ -1,3 +1,6 @@
+// SPDX-License-Identifier: Apache-2.0
+// Copyright Contributors to the ACES Project.
+
 // <ACEStransformID>urn:ampas:aces:transformId:v2.0:InvOutput.Academy.P3-D60_1000nit_in_P3-D65_sRGB-Piecewise.a2.v1</ACEStransformID>
 // <ACESuserName>Inverse Extended DisplayP3 (1000 nit) (D60 simulation)</ACESuserName>
 

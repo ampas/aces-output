@@ -1,3 +1,6 @@
+// SPDX-License-Identifier: Apache-2.0
+// Copyright Contributors to the ACES Project.
+
 // <ACEStransformID>urn:ampas:aces:transformId:v2.0:Output.Academy.Rec709-D60_100nit_in_Rec709-D65_BT1886.a2.v1</ACEStransformID>
 // <ACESuserName>Rec.709 BT.1886 (D60 simulation)</ACESuserName>
 

@@ -1,3 +1,6 @@
+// SPDX-License-Identifier: Apache-2.0
+// Copyright Contributors to the ACES Project.
+
 // <ACEStransformID>urn:ampas:aces:transformId:v2.0:Output.Academy.Rec2100-D60_2000nit_in_Rec2100-D65_ST2084.a2.v1</ACEStransformID>
 // <ACESuserName>Rec.2100 ST2084 (2000 nit) (D60 simulation)</ACESuserName>
 

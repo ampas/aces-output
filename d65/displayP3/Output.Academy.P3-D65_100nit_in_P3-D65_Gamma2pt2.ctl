@@ -1,3 +1,6 @@
+// SPDX-License-Identifier: Apache-2.0
+// Copyright Contributors to the ACES Project.
+
 // <ACEStransformID>urn:ampas:aces:transformId:v2.0:Output.Academy.P3-D65_100nit_in_P3-D65_Gamma2pt2.a2.v1</ACEStransformID>
 // <ACESuserName>DisplayP3 Gamma 2.2</ACESuserName>
 

@@ -1,36 +1,50 @@
-# ACES Output Transforms #
+<!-- SPDX-License-Identifier: Apache-2.0 -->
+<!-- Copyright Contributors to the ACES Project -->
 
-[![CLA assistant](https://cla-assistant.io/readme/badge/ampas/aces-output)](https://cla-assistant.io/ampas/aces-output)
+# ACES Output Transforms
 
-This repository contains a set of modules that declare presets that will result in Outputs to some commonly used standard output display setups. These include presets designed targeting the mostly the same list of outputs as ACES v1.x but adding a few new ones or removing a few less commonly used. Users are _not_ limited to only the transforms listed in this repository and it is simple to create additional output transforms to display characteristics other than those supplied as presets.
+[![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](https://opensource.org/licenses/Apache-2.0) [![CLA
+assistant](https://cla-assistant.io/readme/badge/ampas/aces-output)](https://cla-assistant.io/ampas/aces-output)
 
-Specifics about the transform parameters and how they are intended to be used can be found on the [ACES documentation site](docs.acescentral.com).
+This repository provides CTL transforms with predefined parameter sets that
+invoke functions from [aces-core](github.com/ampas/aces-core) to produce reference
+output renders for standard and commonly used display configurations. 
 
-## Dependencies ##
-All transforms save pre-set display parameters but the rendering itself is dependent on the core Lib files tracked in [aces-core](github.com/ampas/aces-dev). These Lib files must be added to the `CTL_MODULE_PATH` environment variable (see section 3.2 in "CTLManual.pdf" for details).
+These presets are provided as a recommendation of which transforms to make
+available in tools. However, users are not restricted to the included transforms
+and may define additional output transforms for other display characteristics as
+needed.
 
-## Notes ##
+The [ACES documentation](docs.acescentral.com) explains the available Output
+Transform parameters and their intended usage.
 
-### Contrib directory ###
-The `contrib` directory contains community-supplied transforms, provided as-is and may not be optimal. The ACES team may have done minimal testing on these transforms, but please visit [ACESCentral.com](https://community.acescentral.com) to review or leave feedback.
+## Contributing
 
-### Note to Implementers ###
+ACES depends on community participation. Developers, manufacturers, and end
+users are encouraged to contribute code, bug fixes, documentation, and other
+technical artifacts.
 
-#### Implementation Guidelines ####
-- **Primary Transforms**: The transforms located in each of the subdirectories of the root directory, with the exception of the `contrib` directory, are a basic subset of possible outputs and should be implemented in all ACES systems. These subdirectories contain the standardized, validated transforms necessary for maintaining compatibility and functionality across different platforms and devices.
-- **Community Contributed Transforms**: The `contrib` directory contains additional community-supplied transforms. These are considered optional. They may provide useful extensions but vary in their testing and support. It is advisable to evaluate their reliability and suitability for your specific needs before integration.
-- **Updates and Maintenance**: Ensure your system includes the most recent updates by regularly incorporating new or revised transforms from the main subdirectories, keeping in line with the latest ACES specifications and industry practices.
+All contributors must have a signed Contributor License Agreement (CLA) on file
+to ensure that the project can freely use your contributions. 
 
-### Signal Range ###
-By default, all transforms output signal as full range code values. If a SMPTE "legal" signal is required, one can use built-in tools available in whatever software they are using or apply a separate CTL utility transform to convert full range to SMPTE legal range or vice versa. 
+See [CONTRIBUTING.md](./CONTRIBUTING.md) for more details.
 
-In ctlrender, this can be achieved in by appending another `-ctl` call to the end of a transform chain. e.g. add `-ctl Utility.Full_to_Legal.ctl` after the initial `-ctl odt.ctl` string.
+## Governance
 
-## License ##
-This project is licensed under the terms of the [LICENSE](./LICENSE.md) agreement.
+This repository is a submodule of the ACES project, hosted by the ASWF. Details
+about how the project operates can be found in the
+[GOVERNANCE.md](https://github.com/ampas/aces/blob/main/GOVERNANCE.md) file in
+the top-level ACES repository.
 
-## Contributing ##
-Thank you for your interest in contributing to our project. Before any contributions can be accepted, we require contributors to sign a Contributor License Agreement (CLA) to ensure that the project can freely use your contributions. You can find more details and instructions on how to sign the CLA in the [CONTRIBUTING.md](./CONTRIBUTING.md) file.
+## Reporting Issues
 
-## Support ## 
-For support, please visit [ACESCentral.com](https://acescentral.com)
+To report a problem with Output Transfoms, please open an
+[issue](https://github.com/ampas/aces-output/issues).
+
+If the issue is senstive in nature or a security related issue, please do not
+report in the issue tracker. Instead refer to [SECURITY.md](SECURITY.md) for
+more information about the project security policy.
+
+## License
+
+The ACES Project is licensed under the [Apache 2.0 license](./LICENSE).

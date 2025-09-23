@@ -1,3 +1,6 @@
+// SPDX-License-Identifier: Apache-2.0
+// Copyright Contributors to the ACES Project.
+
 // <ACEStransformID>urn:ampas:aces:transformId:v2.0:Output.Academy.P3-D60_48nit_in_P3-D65_Gamma2pt6.a2.v1</ACEStransformID>
 // <ACESuserName>P3-D65 (D60 simulation)</ACESuserName>
 
